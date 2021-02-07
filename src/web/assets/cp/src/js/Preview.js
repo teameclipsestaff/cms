@@ -218,7 +218,6 @@ Craft.Preview = Garnish.Base.extend({
                     'class': 'btn disabled',
                     'data-icon': 'refresh',
                     disabled: '',
-                    'aria-hidden': '',
                     'text': Craft.t('app', 'Rotate')
                 }).appendTo(this.$previewHeader);
                 this.addListener(this.$orientationBtn, 'click', 'switchOrientation');
@@ -610,8 +609,7 @@ Craft.Preview = Garnish.Base.extend({
         // Enable the orientation button
         this.$orientationBtn
             .removeClass('disabled')
-            .removeAttr('disabled')
-            .removeAttr('aria-hidden');
+            .removeAttr('disabled');
 
         // Trigger the resized css mods
         this.$iframeContainer.addClass('lp-iframe-container--has-device-preview');
@@ -712,7 +710,6 @@ Craft.Preview = Garnish.Base.extend({
         this.$orientationBtn
             .addClass('disabled')
             .attr('disabled', '')
-            .attr('aria-hidden', '');
         this.$iframeContainer.removeClass('lp-iframe-container--animating');
         this.$iframeContainer.removeClass('lp-iframe-container--has-device-preview');
         this.$iframeContainer.removeClass('lp-iframe-container--tablet');
