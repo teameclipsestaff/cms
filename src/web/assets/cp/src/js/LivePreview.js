@@ -372,7 +372,12 @@ Craft.LivePreview = Garnish.Base.extend({
             '<script type="text/javascript">window.scrollTo(' + this._scrollX + ', ' + this._scrollY + ');</script>';
 
         // Create a new iframe
-        var $iframe = $('<iframe class="lp-preview" frameborder="0"/>');
+        var $iframe = $('<iframe/>', {
+            class: 'lp-preview',
+            frameborder: '0',
+            title: Craft.t('app', 'Preview'),
+        });
+
         if (this.$iframe) {
             $iframe.insertBefore(this.$iframe);
         } else {

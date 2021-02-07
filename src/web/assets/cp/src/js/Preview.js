@@ -466,8 +466,9 @@ Craft.Preview = Garnish.Base.extend({
             this.iframeLoaded = false;
 
             var $iframe = $('<iframe/>', {
-                'class': 'lp-preview',
-                frameborder: 0,
+                class: 'lp-preview',
+                frameborder: '0',
+                title: Craft.t('app', 'Preview'),
                 src: url,
             });
 
